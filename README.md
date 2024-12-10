@@ -69,6 +69,8 @@ Program to design a full adder and full subtractor circuit and verify its truth 
 Developed by: KABELAN G K
 RegisterNumber: 24900985
 ```
+**Full Adder**
+
 ```
 module exp4(df,bo,a,b,bin);
 output df;
@@ -84,13 +86,38 @@ assign df=w1^bin;
 assign bo=w2|w3;
 endmodule
 ```
+**Full Subtractor**
+
+```
+module full_subtractor(diff, borrow, a, b, bin);
+  output diff;
+  output borrow;
+  input a;
+  input b;
+  input bin;
+  assign diff = a ^ b ^ bin;
+  assign borrow = (~a & b) | (~(a ^ b) & bin);
+endmodule
+
+```
 
 **RTL Schematic**
-![image](https://github.com/user-attachments/assets/1d2b3085-ade9-4211-bba1-ae7ccfe625b3)
+**Full Adder**
+
+![image](https://github.com/user-attachments/assets/993f7ad7-9159-46a4-8769-48a7a7b701f3)
+
+**Full Subtractor**
+![image](https://github.com/user-attachments/assets/5d7d76ec-1151-443f-adde-8d9412dd223b)
 
 
 **Output Timing Waveform**
-![image](https://github.com/user-attachments/assets/6b3631f9-4f94-417d-89f4-ab72d3f0fb7f)
+**Full Adder**
+
+![image](https://github.com/user-attachments/assets/3bc3543a-312f-4602-b767-8f7462e5c877)
+
+**Full Subtractor**
+![image](https://github.com/user-attachments/assets/0d64db0f-5039-49e4-89e9-02676e122512)
+
 
 
 **Result:**
